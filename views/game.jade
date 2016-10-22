@@ -1,0 +1,61 @@
+extends layout
+
+append scripts
+    script(src='/javascripts/game.js')
+
+block content
+    center
+        h1
+            = 'Матч между '
+            span.pl1= first_name
+            = ' и '
+            span.pl2= second_name
+        div.field.row
+            div.col-xs-3
+            div.col-xs-6
+                table.fld
+                    each r in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+                        tr
+                            each c in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+                                td
+                                    div.cell(id='cell' + r.toString() + '_' + c.toString())
+                                        = ''
+            div.col-xs-3
+                h2
+                    = 'Ход '
+                    span#currmove
+                    = '/'
+                    span#totalmoves
+                h2
+                    span#winner
+                h4
+                    span#status
+                    //(style='display:none;')
+                h2
+                    span#score
+        div
+            button.rbtn.btn.btn-success(type='button', onclick="onStartGame();")
+                //span.glyphicon.glyphicon-play
+                ='начать'
+            button.rbtn.btn.btn-warning(type='button', onclick="onPauseGame();")
+                //span.glyphicon.glyphicon-pause
+                ='пауза'
+            button.rbtn.btn.btn-danger(type='button',  onclick="onStopGame();")
+                //span.glyphicon.glyphicon-stop
+                ='стоп'
+        div
+            button.rbtn.btn.btn-default(type='button', onclick="onSlower();")
+                //span.glyphicon.glyphicon-fast-backward
+                ='медленней'
+            button.rbtn.btn.btn-default(type='button', onclick="onPrevMove();")
+                //span.glyphicon.glyphicon-step-backward
+                ='шаг назад'
+            button.rbtn.btn.btn-default(type='button', onclick="onNextMove();")
+                //span.glyphicon.glyphicon-step-forward
+                ='шаг вперёд'
+            button.rbtn.btn.btn-default(type='button', onclick="onFaster();")
+                //span.glyphicon.glyphicon-fast-forward
+                ='быстрей'
+        div#data(style='display:none;')
+            = log
+

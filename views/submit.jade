@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    center
+        h1 Отправить решение
+        .container
+            form.form-horizontal(action='/submit', method='post')
+                .form-group
+                    label.control-label.col-xs-offset-3.col-xs-2 login
+                    .col-xs-3
+                        input.form-control(type="text", name="login", placeholder='login')
+                .form-group
+                    label.control-label.col-xs-offset-3.col-xs-2 password
+                    .col-xs-3
+                        input.form-control(type="password", name="pass", placeholder='password')
+                .form-group
+                    label.control-label.col-xs-offset-3.col-xs-2 language
+                    .col-xs-3
+                        select.form-control(name="language")
+                            option(value='Python3') Python3
+                            option(value='C++') C++
+                .form-group
+                    .col-xs-offset-3.col-xs-6
+                        textarea.form-control(name="code", placeholder='code', rows=15)
+                input.btn.btn-default(type="submit", value="submit")

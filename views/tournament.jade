@@ -1,0 +1,31 @@
+extends layout
+
+block content
+    center
+        h1 Турнирная таблица
+        div.row
+            div.col-xs-2
+            div.col-xs-8
+                table.resultstable.table-bordered
+                    thead
+                        tr
+                            td.rcell
+                            each team in teams
+                                if !team.skip
+                                    td.rcell= team.name
+                            td.rcell submit
+                            td.rcell
+                    each team in teams
+                        if !team.skip
+                            tr
+                                td.rcell
+                                    div.row.teamname= team.name
+                                    div.row.teaminfo= team.info
+                                each game in team.scores
+                                    td.rcell(class=game.type)
+                                        div
+                                            a.stscore(href = id + '/game/' + team.name + '/' + game.opponent_name)
+                                                = game.value
+                                td.rcell= team.submit_id
+                                td.rcell= team.sum_score
+            div.col-xs-2

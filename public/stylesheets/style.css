@@ -1,0 +1,82 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.pl1 {
+  color: #FF0000;
+}
+
+.pl2 {
+  color: #0000FF;
+}
+
+.inl {
+  display: inline;
+  float: left;
+}
+
+.cell {
+  border-spacing: 2px;
+  padding: 2px;
+}
+
+.resultstable {
+  border: 1px;
+}
+
+.rcell {
+  padding: 2px;
+  font-size: 25pt;
+  width: 200px;
+  text-align: center;
+}
+
+.teaminfo {
+  font-size: 13pt;
+}
+
+.teamname {
+  font-size: 25pt;
+}
+
+.rbtn {
+  margin: 2px 5px 2px 5px;
+  padding: 2px 5px 2px 5px;
+}
+
+.stdraw {
+  background-color: yellow;
+}
+
+.stfail {
+  background-color: #FF3333;
+}
+
+.stwin {
+  background-color: #33FF33;
+}
+
+.stdrawwin {
+  background-color: #66FF66;
+}
+
+.stdrawfail {
+  background-color: #FF6666;
+}
+
+.sttechwin {
+  background-color: #AAFFAA;
+}
+
+.sttechfail {
+  background-color: #FFAAAA;
+}
+
+.stscore {
+  color: black;
+}

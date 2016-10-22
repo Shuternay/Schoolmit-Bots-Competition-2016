@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    center
+        h1 Посылки
+        .col-xs-offset-3.col-xs-6
+            table.table.table-hover
+                thead
+                    tr
+                        td Submit id
+                        td Name
+                        td Submit time
+                - var n = submits.length - 1
+                tbody
+                    each submit in submits.reverse()
+                        tr
+                            td= n
+                            td= submit.owner
+                            td= submit.time
+                        - --n
+
